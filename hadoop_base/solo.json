@@ -1,0 +1,28 @@
+{
+  "java": {
+    "install_flavor": "oracle",
+    "jdk_version": "7",
+    "oracle": {
+      "accept_oracle_download_terms": true
+    }
+  },
+  "hadoop": {
+    "distribution": "cdh",
+    "distribution_version": "5",
+    "container_executor": {
+      "banned.users": "hdfs,yarn,mapred,bin"
+    },
+    "core_site": {
+      "fs.defaultFS": "hdfs://localhost:9000"
+    },
+    "hdfs_site": {
+      "dfs.datanode.max.transfer.threads": 4096
+    }
+  },
+  
+  "run_list": [
+    "recipe[java::default]",
+    "recipe[hadoop::default]"
+  ]
+}
+

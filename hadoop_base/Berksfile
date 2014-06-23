@@ -1,0 +1,5 @@
+site :opscode
+
+cookbook 'build-essential'
+cookbook 'git'
+cookbook 'hadoop', github: 'continuuity/hadoop_cookbook'
